@@ -17,8 +17,8 @@
 # include <math.h>
 # include "mlx.h"
 # include <OpenCL/opencl.h>
-# define WIN_WIDTH 1080
-# define WIN_HEIGHT 1080
+# define WIN_WIDTH 720
+# define WIN_HEIGHT 720
 # define SMOOTH_COLOR 1
 # define BURNING_COLOR 2
 # define NEONS 4
@@ -101,6 +101,7 @@ struct					s_env
 	int					num_thread;
 	t_init				tab_init[NB_FRACTALS];
 	int					toggled_info;
+	int					opencl;
 };
 
 int						key_hook(int keycode, t_env *e);
@@ -126,6 +127,7 @@ t_image					ft_new_image(int width, int height);
 int						init_fract(char *str, t_env *e);
 void					init_t_init(t_env *e);
 void					mlx_put_fract_img_open_cl(t_env *e);
+void					mlx_put_fract_img(t_env *e);
 void					wheel_hook_forward(int keycode, int x, int y, t_env *e);
 void					wheel_hook_backward(int k, int x, int y, t_env *e);
 void					key_hook_3(int keycode, t_env *e);

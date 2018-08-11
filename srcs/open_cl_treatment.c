@@ -115,7 +115,7 @@ void	mlx_put_fract_img_open_cl(t_env *e)
 	prepare_ocl(&ocl);
 	create_program(&ocl);
 	create_kernel(&ocl, e);
-	ocl.local_item_size = 240;
+	ocl.local_item_size = 128;
 	ret = clEnqueueNDRangeKernel(ocl.command_queue, ocl.kernel, 1, NULL,
 	&(ocl.size), &(ocl.local_item_size), 0, NULL, NULL);
 	ret = clEnqueueReadBuffer(ocl.command_queue, ocl.output_mem_obj,

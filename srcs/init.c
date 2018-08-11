@@ -75,6 +75,7 @@ int		init_fract(char *str, t_env *e)
 void	init_env(t_env *e, int i, char **argv)
 {
 	e->toggled_info = 0;
+	e->opencl = 0;
 	e->win = mlx_new_window(e->mlx, WIN_WIDTH, WIN_HEIGHT, argv[i]);
 	e->image = ft_new_image(WIN_WIDTH, WIN_HEIGHT);
 	mlx_hook(e->win, MOTIONNOTIFY, BUTTONMOTIONMASK, &motion_hook, e);

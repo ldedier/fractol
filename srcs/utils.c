@@ -55,7 +55,10 @@ void			put_iters(t_env *e)
 
 void			process_fractol(t_env *e)
 {
-	mlx_put_fract_img_open_cl(e);
+	if (e->opencl)
+		mlx_put_fract_img_open_cl(e);
+	else
+		mlx_put_fract_img(e);
 	mlx_put_image_to_window(e->mlx, e->win, e->image.ptr, 0, 0);
 	put_interface(e);
 	mlx_destroy_image(e->mlx, e->image.ptr);

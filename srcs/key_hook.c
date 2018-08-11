@@ -28,17 +28,17 @@ void	key_hook_1(int keycode, t_env *e)
 {
 	if (keycode >= 18 && keycode <= 23)
 		teleport((keycode - (keycode / 23)) - 18, e);
-	if (keycode == 83)
+	if (keycode == 26)
 	{
 		e->fract.color = SMOOTH_COLOR;
 		e->fract.smooth = 1;
 	}
-	if (keycode == 84)
+	if (keycode == 28)
 	{
 		e->fract.color = BURNING_COLOR;
 		e->fract.smooth = 1;
 	}
-	if (keycode == 69)
+	if (keycode == 25)
 	{
 		if (e->fract.iter_max <= 1900)
 			e->fract.iter_max += 100;
@@ -67,9 +67,9 @@ void	key_hook_2(int keycode, t_env *e)
 		if (e->fract.toggled == 1)
 		{
 			e->fract.c_r = e->fract.x_min + (e->fract.x_mouse /
-			(double)1080) * (e->fract.x_max - e->fract.x_min);
+			(double)720) * (e->fract.x_max - e->fract.x_min);
 			e->fract.c_i = e->fract.y_min + (e->fract.y_mouse
-			/ (double)1080) * (e->fract.y_max - e->fract.y_min);
+			/ (double)720) * (e->fract.y_max - e->fract.y_min);
 			e->fract.toggled = 0;
 		}
 		else
