@@ -32,17 +32,17 @@ int		fractol_julia(t_fract fract, int i)
 	int g;
 	int b;
 
-	x = i % 720;
-	y = i / 720;
+	x = i % WIN_WIDTH;
+	y = i / WIN_HEIGHT;
 	
-	x_fig = fract.x_min + (x / (double)720) * (fract.x_max - fract.x_min);
-	y_fig = fract.y_min + (y / (double)720) * (fract.y_max - fract.y_min);
+	x_fig = fract.x_min + (x / (double)WIN_WIDTH) * (fract.x_max - fract.x_min);
+	y_fig = fract.y_min + (y / (double)WIN_HEIGHT) * (fract.y_max - fract.y_min);
 	zr = x_fig;
 	zi = y_fig;
 	if (fract.toggled)
 	{
-		x_fig_m = fract.x_min + (fract.x_mouse / (double)720) * (fract.x_max - fract.x_min);
-		y_fig_m = fract.y_min + (fract.y_mouse / (double)720) * (fract.y_max - fract.y_min);
+		x_fig_m = fract.x_min + (fract.x_mouse / (double)WIN_WIDTH) * (fract.x_max - fract.x_min);
+		y_fig_m = fract.y_min + (fract.y_mouse / (double)WIN_HEIGHT) * (fract.y_max - fract.y_min);
 		cr = x_fig_m;
 		ci = y_fig_m;
 	}
@@ -109,19 +109,19 @@ int		fractol_mandelbrot(t_fract fract, int i)
 	int g;
 	int b;
 
-	x = i % 720;
-	y = i / 720;
+	x = i % WIN_WIDTH;
+	y = i / WIN_HEIGHT;
 	
-	x_fig = fract.x_min + (x / (double)720) * (fract.x_max - fract.x_min);
-	y_fig = fract.y_min + (y / (double)720) * (fract.y_max - fract.y_min);
+	x_fig = fract.x_min + (x / (double)WIN_WIDTH) * (fract.x_max - fract.x_min);
+	y_fig = fract.y_min + (y / (double)WIN_HEIGHT) * (fract.y_max - fract.y_min);
 	zr = x_fig;
 	zi = y_fig;
 	cr = x_fig;
 	ci = y_fig;
 	if (fract.toggled)
 	{
-		x_fig_m = fract.x_min + (fract.x_mouse / (double)720) * (fract.x_max - fract.x_min);
-		y_fig_m = fract.y_min + (fract.y_mouse / (double)720) * (fract.y_max - fract.y_min);
+		x_fig_m = fract.x_min + (fract.x_mouse / (double)WIN_WIDTH) * (fract.x_max - fract.x_min);
+		y_fig_m = fract.y_min + (fract.y_mouse / (double)WIN_HEIGHT) * (fract.y_max - fract.y_min);
 		zr = x_fig_m;
 		zi = y_fig_m;
 	}
@@ -183,19 +183,20 @@ int		fractol_burning_ship(t_fract fract, int i)
 	int g;
 	int b;
 
-	x = i % 720;
-	y = i / 720;
+	x = i % WIN_WIDTH;
+	y = i / WIN_HEIGHT;
+	
+	x_fig = fract.x_min + (x / (double)WIN_WIDTH) * (fract.x_max - fract.x_min);
+	y_fig = fract.y_min + (y / (double)WIN_HEIGHT) * (fract.y_max - fract.y_min);
 
-	x_fig = fract.x_min + (x / (double)720) * (fract.x_max - fract.x_min);
-	y_fig = fract.y_min + (y / (double)720) * (fract.y_max - fract.y_min);
 	zr = x_fig;
 	zi = y_fig;
 	cr = x_fig;
 	ci = y_fig;
 	if (fract.toggled)
 	{
-		x_fig_m = fract.x_min + (fract.x_mouse / (double)720) * (fract.x_max - fract.x_min);
-		y_fig_m = fract.y_min + (fract.y_mouse / (double)720) * (fract.y_max - fract.y_min);
+		x_fig_m = fract.x_min + (fract.x_mouse / (double)WIN_WIDTH) * (fract.x_max - fract.x_min);
+		y_fig_m = fract.y_min + (fract.y_mouse / (double)WIN_HEIGHT) * (fract.y_max - fract.y_min);
 		zr = x_fig_m;
 		zi = y_fig_m;
 	}
@@ -258,11 +259,11 @@ int		fractol_tricorn(t_fract fract, int i)
 	int g;
 	int b;
 
-	x = i % 720;
-	y = i / 720;
-
-	x_fig = fract.x_min + (x / (double)720) * (fract.x_max - fract.x_min);
-	y_fig = fract.y_min + (y / (double)720) * (fract.y_max - fract.y_min);
+	x = i % WIN_WIDTH;
+	y = i / WIN_HEIGHT;
+	
+	x_fig = fract.x_min + (x / (double)WIN_WIDTH) * (fract.x_max - fract.x_min);
+	y_fig = fract.y_min + (y / (double)WIN_HEIGHT) * (fract.y_max - fract.y_min);
 	zr = x_fig;
 	zi = y_fig;
 	cr = x_fig;
@@ -270,8 +271,8 @@ int		fractol_tricorn(t_fract fract, int i)
 	nb_iter = 0;
 	if (fract.toggled)
 	{
-		x_fig_m = fract.x_min + (fract.x_mouse / (double)720) * (fract.x_max - fract.x_min);
-		y_fig_m = fract.y_min + (fract.y_mouse / (double)720) * (fract.y_max - fract.y_min);
+		x_fig_m = fract.x_min + (fract.x_mouse / (double)WIN_WIDTH) * (fract.x_max - fract.x_min);
+		y_fig_m = fract.y_min + (fract.y_mouse / (double)WIN_HEIGHT) * (fract.y_max - fract.y_min);
 		zr = x_fig_m;
 		zi = y_fig_m;
 	}
@@ -332,19 +333,19 @@ int		fractol_perp_bs(t_fract fract, int i)
 	int g;
 	int b;
 
-	x = i % 720;
-	y = i / 720;
-
-	x_fig = fract.x_min + (x / (double)720) * (fract.x_max - fract.x_min);
-	y_fig = fract.y_min + (y / (double)720) * (fract.y_max - fract.y_min);
+	x = i % WIN_WIDTH;
+	y = i / WIN_HEIGHT;
+	
+	x_fig = fract.x_min + (x / (double)WIN_WIDTH) * (fract.x_max - fract.x_min);
+	y_fig = fract.y_min + (y / (double)WIN_HEIGHT) * (fract.y_max - fract.y_min);
 	zr = x_fig;
 	zi = y_fig;
 	cr = x_fig;
 	ci = y_fig;
 	if (fract.toggled)
 	{
-		x_fig_m = fract.x_min + (fract.x_mouse / (double)720) * (fract.x_max - fract.x_min);
-		y_fig_m = fract.y_min + (fract.y_mouse / (double)720) * (fract.y_max - fract.y_min);
+		x_fig_m = fract.x_min + (fract.x_mouse / (double)WIN_WIDTH) * (fract.x_max - fract.x_min);
+		y_fig_m = fract.y_min + (fract.y_mouse / (double)WIN_HEIGHT) * (fract.y_max - fract.y_min);
 		zr = x_fig_m;
 		zi = y_fig_m;
 	}
@@ -409,11 +410,11 @@ int		fractol_balloons(t_fract fract, int i)
 	int b;
 	double divisor;
 
-	x = i % 720;
-	y = i / 720;
-
-	x_fig = fract.x_min + (x / (double)720) * (fract.x_max - fract.x_min);
-	y_fig = fract.y_min + (y / (double)720) * (fract.y_max - fract.y_min);
+	x = i % WIN_WIDTH;
+	y = i / WIN_HEIGHT;
+	
+	x_fig = fract.x_min + (x / (double)WIN_WIDTH) * (fract.x_max - fract.x_min);
+	y_fig = fract.y_min + (y / (double)WIN_HEIGHT) * (fract.y_max - fract.y_min);
 	zr = x_fig;
 	zi = y_fig;
 	cr = x_fig;
@@ -421,8 +422,8 @@ int		fractol_balloons(t_fract fract, int i)
 	
 	if (fract.toggled)
 	{
-		x_fig_m = fract.x_min + (fract.x_mouse / (double)720) * (fract.x_max - fract.x_min);
-		y_fig_m = fract.y_min + (fract.y_mouse / (double)720) * (fract.y_max - fract.y_min);
+		x_fig_m = fract.x_min + (fract.x_mouse / (double)WIN_WIDTH) * (fract.x_max - fract.x_min);
+		y_fig_m = fract.y_min + (fract.y_mouse / (double)WIN_HEIGHT) * (fract.y_max - fract.y_min);
 		cr = x_fig_m;
 		ci = y_fig_m;
 	}

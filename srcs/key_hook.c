@@ -67,9 +67,9 @@ void	key_hook_2(int keycode, t_env *e)
 		if (e->fract.toggled == 1)
 		{
 			e->fract.c_r = e->fract.x_min + (e->fract.x_mouse /
-			(double)720) * (e->fract.x_max - e->fract.x_min);
+			(double)WIN_WIDTH) * (e->fract.x_max - e->fract.x_min);
 			e->fract.c_i = e->fract.y_min + (e->fract.y_mouse
-			/ (double)720) * (e->fract.y_max - e->fract.y_min);
+			/ (double)WIN_HEIGHT) * (e->fract.y_max - e->fract.y_min);
 			e->fract.toggled = 0;
 		}
 		else
